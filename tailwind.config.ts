@@ -57,6 +57,15 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Zi Wei design tokens
+        ziwei: {
+          bg: "hsl(var(--ziwei-bg))",
+          surface: "hsl(var(--ziwei-surface))",
+          gold: "hsl(var(--ziwei-gold))",
+          "gold-light": "hsl(var(--ziwei-gold-light))",
+          palace: "hsl(var(--ziwei-palace))",
+          purple: "hsl(var(--ziwei-purple))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
