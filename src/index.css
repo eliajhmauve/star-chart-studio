@@ -112,5 +112,93 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Georgia', 'Times New Roman', serif;
   }
 }
+
+/* Zi Wei component styles */
+@layer components {
+  .ziwei-glass {
+    background: hsl(var(--ziwei-surface) / 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  .palace-cell {
+    @apply relative rounded-lg p-2 min-h-[90px] transition-all duration-150;
+    background: hsl(var(--ziwei-palace) / 0.85);
+    border: 1px solid hsl(var(--ziwei-gold) / 0.12);
+    backdrop-filter: blur(8px);
+  }
+
+  .palace-cell:hover {
+    background: hsl(var(--ziwei-palace) / 1);
+    border-color: hsl(var(--ziwei-gold) / 0.35);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px hsl(var(--ziwei-gold) / 0.12);
+  }
+
+  .palace-life {
+    border: 1.5px solid hsl(var(--ziwei-gold) / 0.65) !important;
+    background: hsl(var(--ziwei-palace-life) / 0.9) !important;
+    box-shadow: 0 0 12px hsl(var(--ziwei-gold) / 0.15), inset 0 0 8px hsl(var(--ziwei-gold) / 0.05);
+  }
+
+  .palace-body {
+    border-color: hsl(270 60% 50% / 0.5) !important;
+    box-shadow: 0 0 8px hsl(270 60% 50% / 0.15);
+  }
+
+  .ziwei-input {
+    @apply bg-transparent border-ziwei-gold/25 text-foreground focus:border-ziwei-gold/60;
+    background: hsl(var(--ziwei-surface) / 0.5) !important;
+  }
+
+  .ziwei-btn-gold {
+    background: linear-gradient(135deg, hsl(var(--ziwei-gold)), hsl(var(--ziwei-gold-light) / 0.8));
+    color: hsl(var(--ziwei-bg));
+    font-weight: 600;
+    border: 1px solid hsl(var(--ziwei-gold) / 0.5);
+    transition: all 0.2s ease;
+  }
+
+  .ziwei-btn-gold:hover {
+    background: linear-gradient(135deg, hsl(var(--ziwei-gold-light) / 0.9), hsl(var(--ziwei-gold)));
+    box-shadow: 0 4px 20px hsl(var(--ziwei-gold) / 0.4);
+    transform: translateY(-1px);
+  }
+
+  /* SiHua badge colors */
+  .badge-sihua-lu {
+    @apply bg-green-500/15 text-green-400 border-green-500/30;
+  }
+  .badge-sihua-quan {
+    @apply bg-red-500/15 text-red-400 border-red-500/30;
+  }
+  .badge-sihua-ke {
+    @apply bg-blue-500/15 text-blue-400 border-blue-500/30;
+  }
+  .badge-sihua-ji {
+    @apply bg-zinc-500/15 text-zinc-400 border-zinc-500/30;
+  }
+}
+
+/* Animations */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.15; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.4); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-twinkle {
+  animation: twinkle ease-in-out infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
