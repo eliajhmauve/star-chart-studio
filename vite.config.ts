@@ -4,8 +4,8 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
-export default defineConfig(({
-  base: '/star-chart-studio/', mode }) => ({
+export default defineConfig(({ mode }) => ({
+  base: '/star-chart-studio/',
   server: {
     host: "::",
     port: 8080,
