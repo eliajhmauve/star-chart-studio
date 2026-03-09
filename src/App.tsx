@@ -14,7 +14,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename="/star-chart-studio">
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/ziwei" element={<ZiWei />} />
